@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "p4adev_tools"
-version = "0.0.1"
+version = "0.0.2"
 description = "Collection of widgets for the older kivymd 1.1.1 lib (material design 2)."
 authors = ["BlackCatDevel0per <bcdev@mail.ru>"]
 license = "Apache 2.0"

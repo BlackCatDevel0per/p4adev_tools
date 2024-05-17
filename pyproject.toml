@@ -135,7 +135,7 @@ background-zmq-ipython = "^1.20220901.135250"
 optional = true
 
 [tool.poetry.group.dev.dependencies]
-poetry-plugin-commands = "^0.0.8"
+poetry-plugin-commands = "^0.0.9"
 
 pytest = "^7.4.2"
 pytest-dependency = "^0.5.1"

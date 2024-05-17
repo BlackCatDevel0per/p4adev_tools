@@ -194,7 +194,9 @@ def ipython_kernel_thread(conf_opts: dict[str, Any] = {}) -> IPyWrapper:  # noqa
 
 	if platform == 'android':
 		# Set to app dir near `.kivy` dir
-		dir_aipyp = os_environ['IPYTHONDIR'] = os_environ['ANDROID_ARGUMENT'] + '/' + '.ipython'
+		dir_aipyp = os_environ['IPYTHONDIR'] = os_environ.get(
+			'ANDROID_APP_CONF_PATH', os_environ.get('ANDROID_ARGUMENT', '.'),
+		) + '/' + '.ipython'
 		file_kfp = Path(dir_aipyp, kfn)
 
 		mkdirs(dir_aipyp, exist_ok=True)

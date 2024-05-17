@@ -15,6 +15,7 @@ Documentation = "https://github.com/BlackCatDevel0per/p4adev_tools"
 Repository = "https://github.com/BlackCatDevel0per/p4adev_tools"
 
 # TODO: Execute without wait to end (poetry will closed while task is pending)
+# List commands with `poetry user-commands`
 [tool.poetry-plugin-commands]
 stree = "tree src"
 # TODO: Make some examples (like kivy garden or etc.)
@@ -119,10 +120,16 @@ python = ">=3.8.1,<4.0"
 plyer = "^2.1.0"
 
 
-[tool.poetry.group.main]
+[tool.poetry-plugin-deps-juice]
+"poetry" = [
+	"base",
+]
+
+
+[tool.poetry.group.base]
 optional = false
 
-[tool.poetry.group.main.dependencies]
+[tool.poetry.group.base.dependencies]
 pyftpdlib = "^1.5.9"
 ipykernel = "^6.29.4"
 jedi = "0.19.1"
@@ -130,6 +137,13 @@ ipython = "8.12.3"
 
 # TODO: Replace it..
 background-zmq-ipython = "^1.20220901.135250"
+
+[tool.poetry.group.poetry-plugins]
+optional = true
+
+[tool.poetry.group.poetry-plugins.dependencies]
+poetry-plugin-commands = "^0.0.9"
+poetry-plugin-deps-juice = "^0.0.3"
 
 [tool.poetry.group.dev]
 optional = true
